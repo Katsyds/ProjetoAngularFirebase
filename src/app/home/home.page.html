@@ -10,7 +10,7 @@
             <ion-label>Lista</ion-label>
           </ion-segment-button>
 
-          <ion-segment-button value="b">
+          <ion-segment-button value="b" >
             <ion-label>Inserir</ion-label>
           </ion-segment-button>
 
@@ -24,7 +24,92 @@
 
 <ion-content class="ion-padding">
 
+<ion-row class="ion-justify-content-center" *ngIf="this.guia=='all'">
+  <ion-col size="10">
+    
+    <ion-list [inset]="true">
+      <!-- <ng-container *ngFor="let funcionario of this.funcionarios"> -->
+      <ion-item>
+
+        <ion-col size="1">
+          <ion-label class="id"><ion-text><i>Id:</i></ion-text> {{ funcionario.CodFun }} </ion-label>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-label> <ion-text><i>Nome:</i></ion-text> {{ funcionario.Nome }} </ion-label>
+        </ion-col>
+
+        <ion-col size="3">
+          <ion-label><ion-text><i>Cargo:</i></ion-text> {{ funcionario.Cargo }} </ion-label>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-label><ion-text><i>Cidade:</i></ion-text> {{ funcionario.Cidade }} </ion-label>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-label><ion-text><i>Telefone:</i></ion-text> {{ funcionario.Fone }} </ion-label>
+        </ion-col>
+          
+         <!-- Botao & icones -->
+        <ion-col size="1">
+          <ion-button size="large" color="none" (click)="setOpen( funcionario )">
+            <ion-icon name="create-outline" size="large" color="primary" ></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="1">
+          <ion-button size="large" color="#8465A8"  id="present-alert">
+            <ion-icon name="trash-outline" size="large" color="danger" ></ion-icon>
+          </ion-button>
+        </ion-col>
+        
+      </ion-item>
+    <!-- </ng-container> -->
+    </ion-list>
+  </ion-col>
+</ion-row>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ion-row *ngIf="this.guia=='b'">
+    <ion-col>
+      <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+      
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button (click)="closeModal()">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
   
+        </ng-template>
+      </ion-modal>
+    </ion-col>
+  </ion-row>
 
 </ion-content>
 

@@ -17,6 +17,16 @@ export class HomePage {
     this.guia = event.detail.value
   }
 
+  funcionario:any;
+ isModalOpen= false;
+ setOpen(funcionario: any){
+  this.isModalOpen=true;
+  console.log(funcionario)
+  this.funcionario = funcionario
+ }
+closeModal(){
+  this.isModalOpen = false;
+}
   constructor(
    
   ) { }
